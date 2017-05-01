@@ -1,0 +1,3 @@
+[submodule "e1 - Git/asteroids"]
+	path = e1 - Git/asteroids
+	url = git@github.com:udacity/asteroids.git
