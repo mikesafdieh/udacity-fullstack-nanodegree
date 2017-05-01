@@ -7,13 +7,17 @@ When you want to share your work or showcase it.
 
 2. Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
 
+There may be changes that you don't want to share with others. Thus you can just commit them as local changes.
 
 
 ###########################################################################################################
 
 3. Describe the differences between forks, clones, and branches. When would you use one instead of another?
 
-
+Fork is when you clone a github repo directly to your github profile. You would do this when you want to make changes to an existing repo.
+Clone is when you copy a repo to have a local copy on your comp. You can clone either from an existing repo on your comp already, or from a remote (e.g. from github or bitbucket).
+Branch is when you break off from the current workflow tree (branch off) to work on either a new feature, experiment without worry of ruining the curent project, etc.
+ 
 
 ###########################################################################################################
 

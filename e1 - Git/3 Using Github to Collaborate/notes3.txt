@@ -1,12 +1,39 @@
-When pushing to GitHub, only reachable commits which are not already in the GitHub repo will be pushed, since it would be extremely inefficient to always send all reachable commits on every push
+Github does not allow direct cloning onto their servers (just cloning from github to your computer - kind of like read only permission but no write permission), so you will have to create a new repo directly on github and use a remote repo to allow syncing between your local repo and the one you've created on github.
+
+A remote repository (or just remote for short) allows you to store the location of a repo in which you can send and receive commits (by pushing and pulling). The most common way to send and receive data to a remote is not to do so individually with each commit, but rather by specifying a branch (e.g. pushing the master branch). 
+When pushing to GitHub (or a remote), only reachable commits which are not already in the GitHub repo/server will be pushed, since it would be extremely inefficient to always send all reachable commits on every push.
+
 
 When creating a new repo on Github, if you are creating one from an existing repo on your computer (i.e. a local repository), you do NOT need to initialize with a README. You only need to do this if you're creating a completely new repo straight from Github. In that case, you would initialize with a README in order to have at least one commit in your repo, since you can't clone an empty repo
 
+git remote
+
+- list all current remotes
+
+git remote add <new_remote_name> <url>
+
+- create a new remote repo at the specified url with the specified name
+- if we only have one remote, the standard practice is to name it "origin"
+
+git remote -v
+
+- the -v flag stands for "verbose" and outputs more info for each remote, namely the url where we could fetch data from, and the url where we can push data to (most of the time these 2 will be the same url).
 
 
+git push <remote> <branch>
+
+- pushes changes to github
+- remote: the remote you want to send changes to
+- branch: name of the local branch you want to push
+
+git pull <remote> <branch>
+
+- pulls changes from github
 
 
+When cloning a repo from github, it automatically creates a remote called "origin"
 
+Forking on github is an easy way of cloning a repo you want to work on. Instead of cloning a repo to your comp and then creating a new empty epo on github, a new remote with the said github repo's url, and then pushing your cloned repo (and changes) to new github repo, you can just fork a repo by clicking "Fork" on a github repo page. This will clone the repo to your account DIRECTLY ON GITHUB. It will also give credit to the original creator of the repo by citing which user it was forked from. Now you can clone this to your computer and make changes you want. The local repo does not need to know anything of the original remote repo you forked from.
 
 
 
