@@ -1,0 +1,20 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.pyc
+
+# Files #
+#########
+fullstacknanodegreev1.0syllabus.pdf
+studenthandbook-fullstackwebdeveloperndv1.0.pdf
+
+# Directories #
+###############
+LocalServer
+1 Movie Trailer Website

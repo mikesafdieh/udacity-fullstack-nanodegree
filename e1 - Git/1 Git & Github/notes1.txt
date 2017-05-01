@@ -1,0 +1,28 @@
+diff -u old_game.js new_game.js
+
+- shows the difference between 2 files
+- -u is the "uniform" flag, it just makes things easier
+- the 2nd file given as an argument is the file shown with all the differences (new_game.js in this case)
+
+
+git diff <commit_id_1> <commit_id_2>
+
+- works the same as diff just that its done with git commits.
+
+
+git log --stat
+
+- gives a log of each commit 
+- the --stat flag also gives statistics of each file that was changed in each commit log 
+
+
+git config --global color.ui auto
+
+- changes the color to show red for deleted lines and green for added lines
+
+
+git checkout <commit_id>
+
+- switches to the previous version specified
+
+

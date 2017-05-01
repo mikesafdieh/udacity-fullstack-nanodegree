@@ -1,0 +1,20 @@
+When pushing to GitHub, only reachable commits which are not already in the GitHub repo will be pushed, since it would be extremely inefficient to always send all reachable commits on every push
+
+When creating a new repo on Github, if you are creating one from an existing repo on your computer (i.e. a local repository), you do NOT need to initialize with a README. You only need to do this if you're creating a completely new repo straight from Github. In that case, you would initialize with a README in order to have at least one commit in your repo, since you can't clone an empty repo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To remove a local git repo (not the files of the project, just all the git information like branches, versions, etc.), simply delete the .git directory. 

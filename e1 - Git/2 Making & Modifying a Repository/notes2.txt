@@ -1,0 +1,130 @@
+git init
+
+- initializes a git repository
+- running this command initializes the current directory (and everything below it in the file tree) as a git repository, though nothing is being tracked yet
+
+git status
+
+- shows which files have changed since the last commit
+
+git add <file_name>
+
+- adds the file specified to the staging area
+- after being added to the staging area, the file is ready to be commited to the repo
+- Thus we have 3 areas with git are:
+    1. Working Directory
+    2. Staging Area ("git add")
+    3. Repository ("git commit" and then "git push")
+- using the "-A" option instead of a file name adds all the changed files to the staging area
+
+
+
+REPOSITORY: contains all commits up until now
+STATGING AREA: contains a copy of the most recent commit (until we add changes to it)
+WORKING DIRECTORY: contains same files until we make changes to them
+
+git diff
+
+- without any arguments "git diff" compares all the changes between files in the working directory and staging area
+
+git diff --staged
+
+- the "--staged" flag compares all the changes between the staging area and the most recent commit
+
+git reset --hard
+- erases all changes made in the the working directory AND staging area
+- !!!WARNING!!! this is IRREVERSABLE!!!! Only use when you are SURE you want to erase all current UNCOMMITTED changes
+
+
+
+git branch
+
+-lists the branches of the repo with the current checked out branch (i.e. the current branch we are working on) marked with an "*" to the left of it
+
+git branch <new_branch_name>
+
+- creates a new branch with the given name
+
+git checkout <branch_name>
+
+- checks out to the specified branch
+
+
+
+git log --graph --oneline <branch_name> <branch_name> ...
+
+- the "--graph" flag helps visualize the branch structure
+- the "oneline" flag displays each commit on one line for easy readability
+- you can specify branch names after th flags to view specific branches history
+
+
+
+If you checkout a commit (NOT a branch), you can do whatever you want without worrying about affecting anything in the project (this is what git calls "Detached HEAD"). Thus you can make any commits that you want in this state with out changing any branches (master included). Any of these commits won't show up in git log; it's not reachable from any of the branches. Once you checkout to another branch, everything you did (commits included) in this "Detached HEAD" state will essentially be lost, unless you saved the newly created commit IDs. You can, however create a new branch from this point if you like, in order to save everything you experimented with.
+
+git checkout -b <new_branch_name>
+
+- adding the "-b" flag is a shortcut that allows you to create AND checkout to a new branch in one command as oppossed to two
+
+
+
+MERGINIG:
+When merging branches (say branch1 and master), git keeps track of the commit where branch1 was initially created and compares that version with the most recent commit from master and the most recent commit from branch1. When merging with master, we are "merging branch1 INTO master". Thus a new commit is created which is now the new tip of the master branch with all of the most recent changes from branch1 and master combined. The new tip's 2 parents are the most recent commit of branch1, and master, both being right before the merge. We now can track the history of BOTH branches (master and branch1) after the merge. This is different than just commiting the end of branch1 on top of master (this would just tell master to update to be in the same state as branch1, essentially turning branch1 into the new master branch). Once we have merged succesfully, we can delete branch1 - this ONLY deletes the label "branch1", not the commits themselves since they are now reachable from the new tip of master. However, If we deleted branch1 without merging it into master first, we would essentially be deleting all the commits in the branch along with the label, since none of those commits would be reachable from any other branch.
+Once a merge is complete, all the commits of branch1 and master are sorted by timestamp.
+
+git merge master <branch_name>
+
+- merges the specified branch into master, and updates the master branch to point to the merged version ==> you must be ON THE MASTER BRANCH to get this outcome
+- if you are checked out on the specified branch, you would merging master into said branch
+
+git show <commit_id>
+
+- shows the "diff" of a commit and its parent
+- this is useful after a merge, since commits are then sorted by timestamp, leaving commits of different branches interweaved in a git log 
+
+git branch -d <branch_name>
+
+- the "-d" flag deletes the label of the specified branch
+- if the specified branch has not been merged, this command essentially deletes all the commits in the branch
+
+
+
+MERGE CONFLICTS:
+splits into 3 sections
+
+<<<<<<< HEAD
+top section - this is the newly modified code
+
+||||||| merged common ancestors
+middle section - this is the original version of the code that both branches modified
+
+>>>>>>> master
+bottom section - this is master's version of the code
+
+=======
+this separates bottom and middle sections
+
+
+EXAMPLE:
+
+<<<<<<< HEAD
+    // new code here
+||||||| merged common ancestors
+    // original common ancestor code here
+=======
+    // most recent version of master's code here
+>>>>>>> master
+
+
+git log -n<number>
+
+- the "-n" flag causes git log to only show the number of commits specified, for example "git log -n2" shows only the last 2 commits
+
+
+
+
+
+
+
+
+
+
