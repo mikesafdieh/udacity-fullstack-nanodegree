@@ -1,0 +1,51 @@
+1. How did viewing a diff between two versions of a file help you see the bug that was introduced?
+
+Viewing a the differences with diff was extremely helpful because it showed me exactly where the changes were in the new_game.js file
+
+
+###########################################################################################################
+
+2. How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+
+Manually making versions of your code will be horribly inefficient. With git you dont have to worry about this (so long as you push often).
+
+
+###########################################################################################################
+
+3. What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google docs does?
+
+cons: you have to do more work
+pros: this pays off because now you have more flexibility in choosing when to save versions at logical times
+
+
+###########################################################################################################
+
+4. Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+
+Because git is used primarily for code repositories. Thus files usually depend on each other to work properly as a whole. So git is saving your entire project state on each commit. Other systems dont need this feature as each file is essentially independent from one another.
+
+
+###########################################################################################################
+
+5. How can you use the commands git log and git diff to view the history of files?
+
+git diff <commit_id_1> <commit_id_2>
+git log --stat
+
+
+###########################################################################################################
+
+6. How might using version control make you more confident to make changes that could break something?
+
+Since you can always revert back to  previous commit, you don't have to worry about breaking something. This is probably one of the most valuable aspects of git. You can have the confidence to experiment as much as you please :)
+
+
+###########################################################################################################
+
+7. Now that you have your workspace set up, what do you want to try using Git for?
+
+My future projects, professional work, and more.
+
+
+
+

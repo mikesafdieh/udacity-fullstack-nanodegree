@@ -1,0 +1,56 @@
+1. What happens when you initialize a repository? Why do you need to do it?
+
+Creates a git repository in the current directory (and downward).
+This needs to be done in order to utilize the functionalities of git, such as tracking versions of a project, easily experiment with code without the worry of destroying everything you built so far (by use of branching and commits), etc.
+
+
+###########################################################################################################
+
+2. How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+Staging area is an in between zone for changes to be committed to the repo.
+The benefit of it is so that you can make a few changes to the working directory, stage them and then work on other changes that you still feel belong in the same commit
+
+
+
+###########################################################################################################
+
+3. How can you use the staging area to make sure you have one commit per logical change?
+
+Only add the necessary files to the staging area for said logical change.
+
+
+
+###########################################################################################################
+
+4. What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+When you want start building or experimenting with a new feature. A branch would seperate it so as not to affect the main codebase until you choose to merge the branch into master.
+
+
+
+###########################################################################################################
+
+5. How do the diagrams help you visualize the branch structure?
+
+They clearly show all the branches and and reachability of commits
+
+
+
+###########################################################################################################
+
+6. What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+A succesful merge combines all the changes of 2 (or more?) branches into one cohessive barnch. The diagram helps very much with visualizing this process.
+
+
+###########################################################################################################
+
+7. What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+auto:
+    pros: less work
+    cons: git may miss possible conflicts that will lead to undesired functionality
+manual:
+    pros: you can collaborate with teammates in order to resolve cnflicts, thus producing the desired functionality
+    cons: more work
