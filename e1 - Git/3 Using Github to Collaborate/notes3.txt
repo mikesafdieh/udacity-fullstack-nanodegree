@@ -37,6 +37,24 @@ Forking on github is an easy way of cloning a repo you want to work on. Instead 
 
 
 
+When we clone a repo from github we get a local branch called "master" that points tot he same commit as the remote "master" (as we know).
+However, we also get a local copy of the last known position of that branch on the remote i.e. the "origin/master" branch.
+Now if we make a commit localy, only the local master branch will update to point to the new commit, however, neither the github master branch nor the local origin/master branch will get updated.
+When you push the new commit, only then will the local origin/master branch and github master branch be updated.
+Similarly, if we made new commit on the github master branch and then pulled, both the local branches (master and origin/master) will get updated to that commit.
+Now if one change was made locally and another change made remotely (in real life situations, this is when 2 people are working on the same branch), you can get the remote changes made in a different branch using "git fetch". This creates a new branch from the last commit in common with the remote branch, having only the remote changes without affecting your local changes. The origin/master local branch is set to point to the tip of this new said branch (refer to the screenshots for a good visualization of this).
+In short, fetching updates origin/master with githubs master branch, and then origin/master is merged into the local master branch. ==> This is exactly what happens in a "git pull"
+("git pull origin master" = "git fetch origin" + "git merge master origin/master")
+
+git fetch <remote>
+
+- updates remote branch locally e.g. "git fetch origin" updates origin/master to match the github master branch
+
+
+Fast-forward merge: say we have 2 branches a and b. If b is an ancestor of a, i.e. if a is reachable from b, then we will a "fast-forward merge", meaning branch a will be updated to b. This what happens many times when we push and pull from github: we just pull, make some commits, and push, all without anybody else making changes that conflict with ours. Thus we don't see a merge every time we pull.
+
+
+
 
 
 
