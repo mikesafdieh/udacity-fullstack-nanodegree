@@ -17,5 +17,5 @@ studenthandbook-fullstackwebdeveloperndv1.0.pdf
 # Directories #
 ###############
 LocalServer
-c*
+c1 *
 __pycache__
