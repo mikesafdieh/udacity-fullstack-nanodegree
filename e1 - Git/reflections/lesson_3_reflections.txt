@@ -30,13 +30,18 @@ This way we can "fetch" any remote changes made by others as we make our own cha
 
 5. How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
 
+You can write code together with your team members.
+Easier: direct collaboration; no nee to learn git
+Harder: have to set time to meet whereas with git ppl can just make changes on their own time; can't revert to previous versions if you mess up unless you are constantly copying and pasting your project
+Bottom line: Git & Github have huge advantages and are necessary skills for any modern programmer.
 
 
 ###########################################################################################################
 
 6. When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
 
-
+Make a seperate branch when you want to freely experiment or build a new feature. This way we can completely screw up the code without touching anything in the master branch (which should be treated as production quality).
+Change directly on master when you are making smaller changes. This way we avoid complications of merge conflicts.
 
 
 
