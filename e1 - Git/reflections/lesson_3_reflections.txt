@@ -17,12 +17,13 @@ There may be changes that you don't want to share with others. Thus you can just
 Fork is when you clone a github repo directly to your github profile. You would do this when you want to make changes to an existing repo.
 Clone is when you copy a repo to have a local copy on your comp. You can clone either from an existing repo on your comp already, or from a remote (e.g. from github or bitbucket).
 Branch is when you break off from the current workflow tree (branch off) to work on either a new feature, experiment without worry of ruining the curent project, etc.
- 
+
 
 ###########################################################################################################
 
 4. What is the benefit of having a copy of the last known state of the remote stored locally?
 
+This way we can "fetch" any remote changes made by others as we make our own changes. Then we can merge our results together properly, solving any conflicts that may arise.
 
 
 ###########################################################################################################
