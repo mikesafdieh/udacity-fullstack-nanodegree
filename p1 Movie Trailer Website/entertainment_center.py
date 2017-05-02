@@ -1,12 +1,12 @@
-import media
-import fresh_tomatoes
+import media # for using the Movie class
+import fresh_tomatoes # for webpage generation
 
 # Toy Story data
-toy_story = media.Movie(
-    "Toy Story", 
-    "A story of a boy, and his toys that come to life.",
-    "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
-    "https://www.youtube.com/watch?v=KYz2wyBy3kc"
+toy_story = media.Movie( # instantiate Movie instance
+    "Toy Story",  # title
+    "A story of a boy, and his toys that come to life.", # storyline
+    "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg", # image url
+    "https://www.youtube.com/watch?v=KYz2wyBy3kc" # trailer url
 )
 
 # Pirates of the Caribbean: The Curse of the Black Pearl data
@@ -49,7 +49,10 @@ warrior = media.Movie(
     "https://www.youtube.com/watch?v=I5kzcwcQA1Q"
 )
 
+# create a list of all the Movie instances
 movies_list = [toy_story, pirates, happy_gilmore, prince_of_egypt, batman, warrior]
+
+# send list of Movies to be processed and displayed on webpage
 fresh_tomatoes.open_movies_page(movies_list)
 
 
